@@ -1,0 +1,16 @@
+<div class="panel" ng-class="classPanel">
+    <div class="panel-heading" ng-if="exibirHeader !== false">
+        <div ng-transclude="header">
+            <i class="fa fa-edge"></i>
+            <span>Título default</span>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div ng-transclude="body">
+
+        </div>
+    </div>
+    <div class="panel-footer" ng-if="exibirFooter !== false">
+        <div ng-transclude="footer"></div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="pd-crud">
+    <form name="{{formName}}" novalidate>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <i class="fa-2x fa fa-edit"></i> <span ng-bind="titulo" class="pd-crud-titulo"></span>
+            </div>
+            <div class="panel panel-body">
+                <ng-transclude></ng-transclude>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary navbar-btn"
+                        ng-click="salvar()">
+                    <i class="fa fa-floppy-o"></i>
+                    Salvar
+                </button>
+
+                <button class="btn btn-danger navbar-btn"
+                        ng-click="excluir()">
+                    <i class="fa fa-trash"></i>
+                    Excluir
+                </button>
+
+                <button class="btn btn-warning navbar-btn"
+                        ng-click="limpar()">
+                    <i class="fa fa-eraser"></i>
+                    Limpar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

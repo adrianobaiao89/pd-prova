@@ -1,0 +1,161 @@
+<div ng-controller="CadastroUsuariosController" class="container">
+    <form name="usuarioForm" novalidate>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <i class="fa-2x fa fa-edit"></i> Cadastro de Usuários
+            </div>
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.codigoUsuario.$touched && usuarioForm.codigoUsuario.$invalid}">
+                            <md-input-container>
+                                <label>Código</label>
+                                <input type="text" ng-model="entidade.codigoUsuario"
+                                       ng-required="true"
+                                       ng-minlength="3"
+                                       ng-maxlength="20"
+                                       autofocus="true"
+                                       name="codigoUsuario"
+                                       autofocus
+                                       id="codigoUsuario">
+
+
+                                <div ng-messages="usuarioForm.codigoUsuario.$error"
+                                     ng-if="usuarioForm.codigoUsuario.$touched" class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.nomeUsuario.$touched && usuarioForm.nomeUsuario.$invalid}">
+                            <md-input-container>
+                                <label>Nome</label>
+                                <input type="text" ng-model="entidade.nomeUsuario"
+                                       ng-required="true"
+                                       ng-minlength="1"
+                                       ng-maxlength="20"
+                                       name="nomeUsuario">
+
+                                <div ng-messages="usuarioForm.nomeUsuario.$error"
+                                     ng-if="usuarioForm.nomeUsuario.$touched" class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.emailUsuario.$touched && usuarioForm.emailUsuario.$invalid}">
+                            <md-input-container>
+                                <label>E-Mail</label>
+                                <input type="email" ng-model="entidade.emailUsuario"
+                                       ng-required="true"
+                                       ng-minlength="1"
+                                       ng-maxlength="50"
+                                       name="emailUsuario">
+
+                                <div ng-messages="usuarioForm.emailUsuario.$error" ng-if="usuarioForm.emailUsuario.$touched"
+                                     class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.loginUsuario.$touched && usuarioForm.loginUsuario.$invalid}">
+                            <md-input-container>
+                                <label>Login</label>
+                                <input type="text" ng-model="entidade.loginUsuario"
+                                       ng-required="true"
+                                       ng-minlength="3"
+                                       ng-maxlength="20"
+                                       autofocus="true"
+                                       name="loginUsuario"
+                                       autofocus
+                                       id="loginUsuario">
+
+
+                                <div ng-messages="usuarioForm.loginUsuario.$error"
+                                     ng-if="usuarioForm.loginUsuario.$touched" class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.senhaUsuario.$touched && usuarioForm.senhaUsuario.$invalid}">
+                            <md-input-container>
+                                <label>Senha</label>
+                                <input type="password" ng-model="entidade.senhaUsuario"
+                                       ng-required="true"
+                                       ng-minlength="1"
+                                       ng-maxlength="20"
+                                       name="senhaUsuario">
+
+                                <div ng-messages="usuarioForm.senhaUsuario.$error"
+                                     ng-if="usuarioForm.senhaUsuario.$touched" class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group"
+                             ng-class="{'has-error':usuarioForm.confirmaSenhaUsuario.$touched && usuarioForm.confirmaSenhaUsuario.$invalid}">
+                            <md-input-container>
+                                <label>Confirmar Senha</label>
+                                <input type="password" ng-model="entidade.confirmaSenhaUsuario"
+                                       ng-required="true"
+                                       ng-minlength="1"
+                                       ng-maxlength="20"
+                                       name="confirmaSenhaUsuario">
+
+                                <div ng-messages="usuarioForm.confirmaSenhaUsuario.$error" ng-if="usuarioForm.confirmaSenhaUsuario.$touched"
+                                     class="text-danger">
+                                    <div ng-messages-include="app/template/input-ng-messages.html"></div>
+
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ui-grid="gridOptions"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary navbar-btn" ng-click="salvar()"><i class="fa fa-save"></i> Salvar
+                </button>
+                <button class="btn btn-warning navbar-btn" ng-click="limpar()"><i class="fa fa-eraser"></i> Limpar
+                </button>
+            </div>
+
+        </div>
+    </form>
+    <div><!-- corpo-->
+        <ui-view></ui-view>
+    </div>
+
+</div>
